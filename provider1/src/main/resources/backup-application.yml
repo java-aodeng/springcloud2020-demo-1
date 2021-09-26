@@ -1,0 +1,12 @@
+#不使用配置中心的配置，使用配置中心，就将这些配置除端口外，添加到nacos配置中心里面
+server:
+  port: 8761
+
+spring:
+  application:
+    name: provider
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848

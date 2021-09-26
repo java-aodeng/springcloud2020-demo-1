@@ -6,6 +6,7 @@
     <modules>
         <module>consumer</module>
         <module>provider</module>
+        <module>provider1</module>
     </modules>
     <groupId>com.example</groupId>
     <artifactId>demo</artifactId>
@@ -17,6 +18,8 @@
         <spring-boot.version>2.4.4</spring-boot.version>
         <spring-cloud.version>2020.0.2</spring-cloud.version>
         <spring-cloud-alibaba.version>2020.0.RC1</spring-cloud-alibaba.version>
+        <alibaba.nacos.version>2.0.3</alibaba.nacos.version>
+        <spring-cloud.bootstrap.version>3.0.4</spring-cloud.bootstrap.version>
     </properties>
 
     <dependencyManagement>
@@ -44,6 +47,18 @@
                 <version>${spring-cloud-alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+             <!--Alibaba Nacos 配置-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+            </dependency>
+            <!--引入这个依赖解决SpringCloud2020整合Nacos-Bootstrap配置不生效的问题-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-bootstrap</artifactId>
+                <version>${spring-cloud.bootstrap.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
